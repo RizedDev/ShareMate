@@ -21,4 +21,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "ShareMate"
 include(":app")
- 
+include(":core:data")
+include(":core:domain")
+include(":core:ui")
+include(":features:auth")
+include(":features:chat")
