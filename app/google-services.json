@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "216582651310",
+    "project_id": "sharemate-8c6b8",
+    "storage_bucket": "sharemate-8c6b8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:216582651310:android:eb1eff6b6801235d9e9c3f",
+        "android_client_info": {
+          "package_name": "com.example.sharemate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5Vh1wkHB4TcIb60JT3jtw2xuKoiOYkzA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
