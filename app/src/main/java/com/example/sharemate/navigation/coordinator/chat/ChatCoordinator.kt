@@ -3,12 +3,14 @@ package com.example.sharemate.navigation.coordinator.chat
 import com.example.chat.entry.ChatScreen
 import com.example.chat.output.ChatOutput
 import com.example.sharemate.navigation.mediator.chat.ChatAndRegistrationMediator
+import com.example.sharemate.navigation.mediator.signin.EntryAndChatMediator
 import com.example.sharemate.navigation.mediator.signin.RegistrationAndChatMediator
 import com.github.terrakok.cicerone.Router
 import ru.fabit.navigation.Action
 import ru.fabit.navigation.Coordinator
 
 class ChatCoordinator(
+    private val entryAndChatMediator: EntryAndChatMediator,
     private val registrationAndChatMediator: RegistrationAndChatMediator,
     private val router: Router
 ) : Coordinator<ChatAction>, ChatOutput {
@@ -20,6 +22,7 @@ class ChatCoordinator(
     }
 
     override fun register() {
+        entryAndChatMediator.registerAsChildCoordinator(this)
         registrationAndChatMediator.registerAsChildCoordinator(this)
     }
 

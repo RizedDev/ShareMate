@@ -2,8 +2,10 @@ package com.example.auth.di
 
 import com.example.auth.store.EntryStore
 import com.example.auth.store.action.EntryAction
+import com.example.auth.store.actionhandler.OpenChatScreenActionHandler
 import com.example.auth.store.actionhandler.OpenRegisterScreenActionHandler
 import com.example.auth.store.reducer.AuthReducer
+import com.example.auth.store.sideeffect.EntrySideEffect
 import com.example.auth.store.state.EntryState
 import dagger.Module
 import dagger.Provides
@@ -22,7 +24,9 @@ object AuthStoreModule {
     @ViewModelScoped
     fun provideAuthStore(
         errorHandler: ErrorHandler,
-        openRegisterScreenActionHandler: OpenRegisterScreenActionHandler
+        openRegisterScreenActionHandler: OpenRegisterScreenActionHandler,
+        openChatScreenActionHandler: OpenChatScreenActionHandler,
+        entrySideEffect: EntrySideEffect
     ): EntryStore {
         return EntryStore(
             StoreKit(
@@ -31,7 +35,8 @@ object AuthStoreModule {
                 reducer = AuthReducer,
                 errorHandler = errorHandler,
                 actors = Actors(
-                    actionHandlers = listOf(openRegisterScreenActionHandler)
+                    sideEffects = listOf(entrySideEffect),
+                    actionHandlers = listOf(openRegisterScreenActionHandler, openChatScreenActionHandler)
                 )
             )
         )

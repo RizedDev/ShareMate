@@ -34,6 +34,11 @@ class ChatFragment : Fragment() {
 
         DBRef.setValue("Hello, World!")
 
+        binding.btnSend.setOnClickListener {
+            DBRef.setValue(binding.etMessage.text.toString())
+            binding.etMessage.text.clear()
+        }
+
         DBRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val value = snapshot.getValue<String>()

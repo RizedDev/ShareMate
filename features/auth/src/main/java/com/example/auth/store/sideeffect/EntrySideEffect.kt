@@ -14,7 +14,7 @@ class EntrySideEffect @Inject constructor(
     },
     effect = {state, _ ->
         authRepository.entry(state.login, state.password)
-        EntryAction.Init
+        EntryAction.OpenChatScreen
     },
     error = {EntryAction.Error(it) }
 )
