@@ -1,6 +1,6 @@
 package com.example.auth.store.state
 
-data class AuthState(
+data class EntryState(
     val login: String = "",
     val password: String = "",
     val error: Throwable? = null

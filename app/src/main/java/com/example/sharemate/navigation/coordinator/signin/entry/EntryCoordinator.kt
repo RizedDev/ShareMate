@@ -2,7 +2,9 @@ package com.example.sharemate.navigation.coordinator.signin.entry
 
 import com.example.auth.entry.EntryScreen
 import com.example.auth.output.EntryOutput
+import com.example.sharemate.navigation.coordinator.chat.ChatAction
 import com.example.sharemate.navigation.coordinator.signin.registration.RegistrationAction
+import com.example.sharemate.navigation.mediator.signin.EntryAndChatMediator
 import com.example.sharemate.navigation.mediator.signin.EntryAndRegistrationMediator
 import com.github.terrakok.cicerone.Router
 import ru.fabit.navigation.Action
@@ -10,6 +12,7 @@ import ru.fabit.navigation.Coordinator
 
 class EntryCoordinator(
     private val entryAndRegistrationMediator: EntryAndRegistrationMediator,
+    private val entryAndChatMediator: EntryAndChatMediator,
     private val router: Router
 ) : Coordinator<EntryAction>, EntryOutput {
 
@@ -21,6 +24,7 @@ class EntryCoordinator(
 
     override fun register() {
         entryAndRegistrationMediator.registerAsParentCoordinator(this)
+        entryAndChatMediator.registerAsParentCoordinator(this)
     }
 
     override fun openEntryScreen() {
@@ -29,6 +33,10 @@ class EntryCoordinator(
 
     override fun openRegisterScreen() {
         entryAndRegistrationMediator.sendToChild(RegistrationAction.OpenRegistrationScreen)
+    }
+
+    override fun openChatScreen() {
+        entryAndChatMediator.sendToChild(ChatAction.OpenChatScreen)
     }
 
 

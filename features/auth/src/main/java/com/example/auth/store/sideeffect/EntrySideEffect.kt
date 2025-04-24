@@ -1,20 +1,20 @@
 package com.example.auth.store.sideeffect
 
-import com.example.auth.store.action.AuthAction
-import com.example.auth.store.state.AuthState
+import com.example.auth.store.action.EntryAction
+import com.example.auth.store.state.EntryState
 import com.example.domain.repository.AuthRepository
 import ru.fabit.udf.store.coroutines.SideEffect
 import javax.inject.Inject
 
 class EntrySideEffect @Inject constructor(
     authRepository: AuthRepository
-): SideEffect<AuthState, AuthAction>(
+): SideEffect<EntryState, EntryAction>(
     query = {_, action ->
-        action is AuthAction.Entry
+        action is EntryAction.Entry
     },
     effect = {state, _ ->
         authRepository.entry(state.login, state.password)
-        AuthAction.Init
+        EntryAction.Init
     },
-    error = {AuthAction.Error(it) }
+    error = {EntryAction.Error(it) }
 )

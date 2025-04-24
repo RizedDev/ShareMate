@@ -1,10 +1,10 @@
 package com.example.auth.di
 
-import com.example.auth.store.AuthStore
-import com.example.auth.store.action.AuthAction
+import com.example.auth.store.EntryStore
+import com.example.auth.store.action.EntryAction
 import com.example.auth.store.actionhandler.OpenRegisterScreenActionHandler
 import com.example.auth.store.reducer.AuthReducer
-import com.example.auth.store.state.AuthState
+import com.example.auth.store.state.EntryState
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,11 +23,11 @@ object AuthStoreModule {
     fun provideAuthStore(
         errorHandler: ErrorHandler,
         openRegisterScreenActionHandler: OpenRegisterScreenActionHandler
-    ): AuthStore {
-        return AuthStore(
+    ): EntryStore {
+        return EntryStore(
             StoreKit(
-                startState = AuthState(),
-                bootstrapAction = AuthAction.Init,
+                startState = EntryState(),
+                bootstrapAction = EntryAction.Init,
                 reducer = AuthReducer,
                 errorHandler = errorHandler,
                 actors = Actors(

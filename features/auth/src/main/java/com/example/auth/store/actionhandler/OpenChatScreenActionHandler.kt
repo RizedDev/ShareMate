@@ -7,11 +7,11 @@ import ru.fabit.udf.store.coroutines.ActionHandler
 import ru.fabit.udf.store.coroutines.actionIs
 import javax.inject.Inject
 
-class OpenRegisterScreenActionHandler @Inject constructor(
-    outPut: EntryOutput
-): ActionHandler<EntryState, EntryAction>(
-    query = actionIs<EntryAction.OpenRegisterScreen>(),
-    handler = {_,_ ->
-        outPut.openRegisterScreen()
+class OpenChatScreenActionHandler @Inject constructor(
+    output: EntryOutput
+) : ActionHandler<EntryState, EntryAction>(
+    query = actionIs<EntryAction.OpenChatScreen>(),
+    handler = {_, _ ->
+        output.openChatScreen()
     }
 )

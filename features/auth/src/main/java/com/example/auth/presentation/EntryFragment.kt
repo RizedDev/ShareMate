@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.auth.databinding.FragmentAuthBinding
-import com.example.auth.store.state.AuthState
+import com.example.auth.store.state.EntryState
 import com.example.auth.viewcontroller.AuthViewController
 import dagger.hilt.android.AndroidEntryPoint
 import ru.fabit.viewcontroller.core.StateView
@@ -14,7 +14,7 @@ import ru.fabit.viewcontroller.coroutines.registerViewController
 import ru.fabit.viewcontroller.coroutines.viewControllers
 
 @AndroidEntryPoint
-class EntryFragment : Fragment(), StateView<AuthState> {
+class EntryFragment : Fragment(), StateView<EntryState> {
 
     private val viewController: AuthViewController by viewControllers()
     private lateinit var binding: FragmentAuthBinding
@@ -38,7 +38,7 @@ class EntryFragment : Fragment(), StateView<AuthState> {
         buttonInit()
     }
 
-    override fun renderState(state: AuthState, payload: Any?) {
+    override fun renderState(state: EntryState, payload: Any?) {
 
     }
 
