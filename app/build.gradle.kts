@@ -36,6 +36,9 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -46,30 +49,6 @@ dependencies {
     implementation(project(":features:auth"))
     implementation(project(":features:chat"))
 
-    //Hilt
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.android.compiler)
-
-    // Import the Firebase BoM
-    implementation(platform(libs.firebase.bom))
-
-    // Add the dependency for the Firebase SDK for Google Analytics
-    implementation(libs.firebase.analytics)
-    implementation(libs.firebase.auth)
-    implementation(libs.firebase.firestore)
-
-    //Coroutines
-    implementation(libs.kotlinx.coroutines.android)
-
-    //UDF
-    implementation(libs.library.navigation)
-    implementation(libs.udf.viewcontroller.coroutines)
-    implementation(libs.udf.store.coroutines)
-    implementation(libs.gentleman)
-
-    //Cicerone
-    implementation(libs.cicerone)
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -78,6 +57,39 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(libs.work)
+
+    implementation(libs.library.navigation)
+    implementation(libs.viewcontroller.coroutines)
+    implementation(libs.gentleman)
+
+    implementation(libs.mapkit)
+
+    implementation(libs.location)
+
+    implementation(libs.cicerone)
+
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
+    implementation (libs.hilt.work)
+    kapt (libs.hilt.androidx.compiler)
+
+    implementation(libs.realm.base)
+    implementation(libs.realm.sync)
+
+    implementation(libs.coroutines)
+    implementation(libs.coroutines.android)
+    implementation(libs.coroutines.reactive)
+
+    implementation(libs.androidx.fragment.ktx)
+
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.database)
+
+    implementation(libs.androidx.core.splashscreen)
+
 }
 
 kapt {

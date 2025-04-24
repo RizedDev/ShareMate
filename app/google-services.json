@@ -1,26 +1,44 @@
 {
   "project_info": {
-    "project_number": "216582651310",
-    "project_id": "sharemate-8c6b8",
-    "storage_bucket": "sharemate-8c6b8.firebasestorage.app"
+    "project_number": "573574474353",
+    "project_id": "sharemate-4f9d6",
+    "storage_bucket": "sharemate-4f9d6.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:216582651310:android:eb1eff6b6801235d9e9c3f",
+        "mobilesdk_app_id": "1:573574474353:android:0ea8f5db6e201dfda8c9d0",
         "android_client_info": {
           "package_name": "com.example.sharemate"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "573574474353-26ounq4anlvhb07h0fc0amq1pjlr12gl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sharemate",
+            "certificate_hash": "81dbf93699b568258c80281710a4da0908c124e2"
+          }
+        },
+        {
+          "client_id": "573574474353-tusonlub4hekc2av8p3d7rkev3le2au5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyB5Vh1wkHB4TcIb60JT3jtw2xuKoiOYkzA"
+          "current_key": "AIzaSyAhonRzKj5fNCnXKQ16kJx1xZ4rndS9XzA"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "573574474353-tusonlub4hekc2av8p3d7rkev3le2au5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
