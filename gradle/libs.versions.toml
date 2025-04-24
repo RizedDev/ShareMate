@@ -1,50 +1,94 @@
 [versions]
-agp = "8.9.1"
-cicerone = "7.1"
+agp = "8.8.0"
+coreSplashscreen = "1.0.1"
 firebaseBom = "33.12.0"
-hiltAndroid = "2.51.1"
-hiltAndroidCompiler = "2.51.1"
-kotlin = "2.0.21"
-coreKtx = "1.15.0"
+groupie = "2.10.1"
+inputMaskAndroid = "6.0.0"
+kotlin = "1.9.24"
+coreKtx = "1.10.1"
 junit = "4.13.2"
-junitVersion = "1.2.1"
-espressoCore = "3.6.1"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
 appcompat = "1.7.0"
-kotlinxCoroutinesAndroid = "1.8.0"
+maskEdittext = "1.1.1"
 material = "1.12.0"
-activity = "1.10.1"
-constraintlayout = "2.2.1"
-jetbrainsKotlinJvm = "2.0.21"
+activity = "1.10.0"
+constraintlayout = "2.2.0"
+jetbrainsKotlinJvm = "1.9.24"
+picasso = "2.5.2"
+realm = "1.16.0"
+hilt = "2.51.1"
+kotlin-serialization = "1.9.0"
+work = "2.10.0"
 library-navigation = "0.1.0"
-storeCoroutinesVersion = "6.0.2"
-viewcontrollerCoroutinesVersion = "6.0.2"
+viewcontroller-coroutines = "6.0.2"
 gentleman = "0.2.1"
+mapkit = "4.7.0-lite"
+location = "21.3.0"
+cicerone = "7.1"
+androidx-hilt = "1.2.0"
+coroutines-core = "1.7.3"
+coroutines = "1.8.0"
+fragment-ktx = "1.8.5"
+java-inject = "1"
+kotlinxSerializationJson = "1.6.0"
+lifecycle = "2.8.7"
+googleGmsGoogleServices = "4.4.2"
+firebaseAuth = "23.1.0"
+firebaseDatabase = "21.0.0"
 
 [libraries]
-cicerone = { module = "com.github.terrakok:cicerone", version.ref = "cicerone" }
-gentleman = { module = "com.github.FabitMobile:gentleman", version.ref = "gentleman" }
-library-navigation = { module = "com.github.FabitMobile:library-navigation", version.ref = "library-navigation" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
-firebase-auth = { module = "com.google.firebase:firebase-auth" }
+androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
+dagger-hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
-firebase-firestore = { module = "com.google.firebase:firebase-firestore" }
-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroidCompiler" }
+google-firebase-database = { module = "com.google.firebase:firebase-database" }
+groupie = { module = "com.github.lisawray.groupie:groupie", version.ref = "groupie" }
+groupie-viewbinding = { module = "com.github.lisawray.groupie:groupie-viewbinding", version.ref = "groupie" }
+hilt-core = { module = "com.google.dagger:hilt-core", version.ref = "hilt" }
+input-mask-android = { module = "com.redmadrobot:input-mask-android", version.ref = "inputMaskAndroid" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+mask-edittext = { module = "com.github.santalu:mask-edittext", version.ref = "maskEdittext" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
-udf-store-coroutines = { module = "com.github.FabitMobile.udf:store-coroutines", version.ref = "storeCoroutinesVersion" }
-udf-viewcontroller-coroutines = { module = "com.github.FabitMobile.udf:viewcontroller-coroutines", version.ref = "viewcontrollerCoroutinesVersion" }
+kotlin-serialization = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin-serialization" }
+picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
+work = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "work" }
+library-navigation = { module = "com.github.FabitMobile:library-navigation", version.ref = "library-navigation" }
+viewcontroller-coroutines = { module = "com.github.FabitMobile.udf:viewcontroller-coroutines", version.ref = "viewcontroller-coroutines" }
+gentleman = { module = "com.github.FabitMobile:gentleman", version.ref = "gentleman" }
+mapkit = { module = "com.yandex.android:maps.mobile", version.ref = "mapkit" }
+location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "location" }
+cicerone = { module = "com.github.terrakok:cicerone", version.ref = "cicerone" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+realm-base = { group = "io.realm.kotlin", name = "library-base", version.ref = "realm" }
+realm-sync = { group = "io.realm.kotlin", name = "library-sync", version.ref = "realm" }
+hilt-work = { group = "androidx.hilt", name = "hilt-work", version.ref = "androidx-hilt" }
+hilt-androidx-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "androidx-hilt" }
+coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines-core" }
+coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+coroutines-reactive = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-reactive", version.ref = "coroutines" }
+androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragment-ktx" }
+java-inject = { group = "javax.inject", name = "javax.inject", version.ref = "java-inject" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+lifecycle-common = { group = "androidx.lifecycle", name = "lifecycle-common", version.ref = "lifecycle" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
+io-realm-kotlin = { id = "io.realm.kotlin", version.ref = "realm" }
+com-google-dagger-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
 
