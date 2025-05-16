@@ -3,7 +3,7 @@ package com.example.sharemate.di.featuresnavigation
 import com.example.registration.output.RegistrationOutput
 import com.example.sharemate.navigation.coordinator.signin.registration.RegistrationCoordinator
 import com.example.sharemate.navigation.mediator.signin.EntryAndRegistrationMediator
-import com.example.sharemate.navigation.mediator.signin.RegistrationAndChatMediator
+import com.example.sharemate.navigation.mediator.signin.RegistrationAndChatListMediator
 import com.github.terrakok.cicerone.Router
 import dagger.Module
 import dagger.Provides
@@ -16,17 +16,17 @@ import javax.inject.Singleton
 object RegistrationNavigationModule {
     @Singleton
     @Provides
-    fun provideRegistrationAndChatMediator(): RegistrationAndChatMediator = RegistrationAndChatMediator()
+    fun provideRegistrationAndChatMediator(): RegistrationAndChatListMediator = RegistrationAndChatListMediator()
 
     @Singleton
     @Provides
     fun provideRegistrationCoordinator(
         entryAndRegistrationMediator: EntryAndRegistrationMediator,
-        registrationAndChatMediator: RegistrationAndChatMediator,
+        registrationAndChatListMediator: RegistrationAndChatListMediator,
         router: Router
     ): RegistrationCoordinator = RegistrationCoordinator(
         entryAndRegistrationMediator,
-        registrationAndChatMediator,
+        registrationAndChatListMediator,
         router
     )
 

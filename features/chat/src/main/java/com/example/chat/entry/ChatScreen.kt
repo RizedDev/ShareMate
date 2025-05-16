@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentFactory
 import com.example.chat.presentation.ChatFragment
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 
-object ChatScreen: FragmentScreen {
+class ChatScreen(private val chatId: String): FragmentScreen {
     override fun createFragment(factory: FragmentFactory): Fragment =
-        ChatFragment.newInstance()
+        ChatFragment.newInstance(chatId)
 }

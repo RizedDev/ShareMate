@@ -49,6 +49,18 @@ dependencies {
     implementation(project(":features:auth"))
     implementation(project(":features:chat"))
 
+    implementation(libs.materialdrawer.v700)
+
+//required support lib modules
+    implementation(libs.androidx.appcompat.v170)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.annotation)
+    implementation(libs.material)
+    implementation(libs.androidx.constraintlayout.v10)
+
+// Add for NavController support
+    implementation(libs.materialdrawer.nav)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

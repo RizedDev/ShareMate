@@ -29,7 +29,7 @@ class EntryFragment : Fragment(), StateView<EntryState> {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentAuthBinding.inflate(layoutInflater)
+        binding = FragmentAuthBinding.inflate(inflater, container, false)
         return binding.root
     }
 

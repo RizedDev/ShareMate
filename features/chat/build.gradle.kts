@@ -26,11 +26,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
     buildFeatures {
         viewBinding = true
@@ -39,12 +39,7 @@ android {
 
 dependencies {
 
-    // Import the BoM for the Firebase platform
-    implementation(platform(libs.firebase.bom))
-
-    // Add the dependency for the Realtime Database library
-    // When using the BoM, you don't specify versions in Firebase library dependencies
-    implementation(libs.google.firebase.database)
+    implementation(project(":core:domain"))
 
     //Cicerone
     implementation(libs.cicerone)

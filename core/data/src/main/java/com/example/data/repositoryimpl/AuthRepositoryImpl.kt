@@ -1,16 +1,13 @@
 package com.example.data.repositoryimpl
 
-import android.app.Activity
 import com.example.data.mapper.UserModelMapper
 import com.example.data.model.user.UserModel
 import com.example.domain.entity.User
 import com.example.domain.repository.AuthRepository
-import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
-import com.google.firebase.auth.auth
 import com.google.firebase.database.FirebaseDatabase
 import io.realm.kotlin.Realm
 import kotlinx.coroutines.tasks.await
@@ -52,6 +49,7 @@ class AuthRepositoryImpl @Inject constructor(
                     name = name,
                     email = email,
                     phone = "",
+                    chats = listOf()
                 )
 
                 dataBase.reference.child("users").child(it).setValue(userData).await()

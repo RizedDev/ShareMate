@@ -2,16 +2,16 @@ package com.example.sharemate.navigation.coordinator.signin.registration
 
 import com.example.registration.entry.RegistrationScreen
 import com.example.registration.output.RegistrationOutput
-import com.example.sharemate.navigation.coordinator.chat.ChatAction
+import com.example.sharemate.navigation.coordinator.chat.ChatListAction
 import com.example.sharemate.navigation.mediator.signin.EntryAndRegistrationMediator
-import com.example.sharemate.navigation.mediator.signin.RegistrationAndChatMediator
+import com.example.sharemate.navigation.mediator.signin.RegistrationAndChatListMediator
 import com.github.terrakok.cicerone.Router
 import ru.fabit.navigation.Action
 import ru.fabit.navigation.Coordinator
 
 class RegistrationCoordinator(
     private val entryAndRegistrationMediator: EntryAndRegistrationMediator,
-    private val registrationAndChatMediator: RegistrationAndChatMediator,
+    private val registrationAndChatListMediator: RegistrationAndChatListMediator,
     private val router: Router
 ) : Coordinator<RegistrationAction>, RegistrationOutput{
 
@@ -22,7 +22,7 @@ class RegistrationCoordinator(
     }
     override fun register() {
         entryAndRegistrationMediator.registerAsChildCoordinator(this)
-        registrationAndChatMediator.registerAsParentCoordinator(this)
+        registrationAndChatListMediator.registerAsParentCoordinator(this)
     }
 
     private fun openRegistrationScreen(){
@@ -34,7 +34,7 @@ class RegistrationCoordinator(
     }
 
     override fun openChatScreen() {
-        registrationAndChatMediator.sendToChild(ChatAction.OpenChatScreen)
+        registrationAndChatListMediator.sendToChild(ChatListAction.OpenChatListScreen)
     }
 
 }
