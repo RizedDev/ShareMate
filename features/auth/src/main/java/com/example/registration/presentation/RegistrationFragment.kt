@@ -1,5 +1,6 @@
 package com.example.registration.presentation
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -34,7 +35,7 @@ class RegistrationFragment : Fragment(), StateView<RegistrationState> {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentRegistrationBinding.inflate(layoutInflater)
+        binding = FragmentRegistrationBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -48,6 +49,7 @@ class RegistrationFragment : Fragment(), StateView<RegistrationState> {
 
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private fun buttonInit(){
         binding.apply {
             register.setOnClickListener {

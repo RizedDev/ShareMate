@@ -2,9 +2,7 @@ package com.example.sharemate.di.featuresnavigation
 
 import com.example.chat.output.ChatOutput
 import com.example.sharemate.navigation.coordinator.chat.ChatCoordinator
-import com.example.sharemate.navigation.mediator.chat.ChatAndRegistrationMediator
-import com.example.sharemate.navigation.mediator.signin.EntryAndChatMediator
-import com.example.sharemate.navigation.mediator.signin.RegistrationAndChatMediator
+import com.example.sharemate.navigation.mediator.chat.ChatListAndChatMediator
 import com.github.terrakok.cicerone.Router
 import dagger.Module
 import dagger.Provides
@@ -19,12 +17,10 @@ object ChatNavigationModule {
     @Singleton
     @Provides
     fun provideChatCoordinator(
-        entryAndChatMediator: EntryAndChatMediator,
-        registrationAndChatMediator: RegistrationAndChatMediator,
+        chatListAndChatMediator: ChatListAndChatMediator,
         router: Router
     ): ChatCoordinator = ChatCoordinator(
-        entryAndChatMediator,
-        registrationAndChatMediator,
+        chatListAndChatMediator,
         router
     )
 

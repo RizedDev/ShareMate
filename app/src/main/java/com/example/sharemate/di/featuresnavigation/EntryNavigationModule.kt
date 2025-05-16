@@ -2,7 +2,7 @@ package com.example.sharemate.di.featuresnavigation
 
 import com.example.auth.output.EntryOutput
 import com.example.sharemate.navigation.coordinator.signin.entry.EntryCoordinator
-import com.example.sharemate.navigation.mediator.signin.EntryAndChatMediator
+import com.example.sharemate.navigation.mediator.signin.EntryAndChatListMediator
 import com.example.sharemate.navigation.mediator.signin.EntryAndRegistrationMediator
 import com.github.terrakok.cicerone.Router
 import dagger.Module
@@ -21,17 +21,17 @@ object EntryNavigationModule {
 
     @Singleton
     @Provides
-    fun provideEntryAndChatMediator(): EntryAndChatMediator = EntryAndChatMediator()
+    fun provideEntryAndChatMediator(): EntryAndChatListMediator = EntryAndChatListMediator()
 
     @Singleton
     @Provides
     fun provideEntryCoordinator(
         entryAndRegistrationMediator: EntryAndRegistrationMediator,
-        entryAndChatMediator: EntryAndChatMediator,
+        entryAndChatListMediator: EntryAndChatListMediator,
         router: Router
     ): EntryCoordinator = EntryCoordinator(
         entryAndRegistrationMediator,
-        entryAndChatMediator,
+        entryAndChatListMediator,
         router
     )
 

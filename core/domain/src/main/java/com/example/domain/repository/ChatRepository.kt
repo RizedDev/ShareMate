@@ -4,5 +4,8 @@ import com.example.domain.entity.Message
 import kotlinx.coroutines.flow.Flow
 
 interface ChatRepository {
-    suspend fun sendMessage(message: Message)
+    suspend fun getFromApi(chatId: String)
+    suspend fun getDataBase(): Flow<Message?>
+    suspend fun updateMessage(message: Message)
+    suspend fun sendMessage(text: String, chatId: String)
 }

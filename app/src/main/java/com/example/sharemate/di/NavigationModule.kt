@@ -2,6 +2,8 @@ package com.example.sharemate.di
 
 import com.example.sharemate.navigation.StartNavigation
 import com.example.sharemate.navigation.coordinator.chat.ChatCoordinator
+import com.example.sharemate.navigation.coordinator.chat.ChatListAction
+import com.example.sharemate.navigation.coordinator.chat.ChatListCoordinator
 import com.example.sharemate.navigation.coordinator.signin.entry.EntryCoordinator
 import com.example.sharemate.navigation.coordinator.signin.registration.RegistrationCoordinator
 import com.github.terrakok.cicerone.Cicerone
@@ -47,12 +49,14 @@ object NavigationModule {
     fun provideApplicationCoordinatorRegistration(
         entryCoordinator: EntryCoordinator,
         registrationCoordinator: RegistrationCoordinator,
-        chatCoordinator: ChatCoordinator
+        chatCoordinator: ChatCoordinator,
+        chatListCoordinator: ChatListCoordinator
     ): CoordinatorRegistration {
         return CoordinatorRegistration(
             entryCoordinator,
             registrationCoordinator,
-            chatCoordinator
+            chatCoordinator,
+            chatListCoordinator
         )
     }
 }

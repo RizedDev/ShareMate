@@ -36,7 +36,9 @@ object AuthStoreModule {
                 errorHandler = errorHandler,
                 actors = Actors(
                     sideEffects = listOf(entrySideEffect),
-                    actionHandlers = listOf(openRegisterScreenActionHandler, openChatScreenActionHandler)
+                    actionHandlers = listOf(openRegisterScreenActionHandler, openChatScreenActionHandler),
+                    bindActionSources = listOf(),
+                    actionSources = listOf()
                 )
             )
         )
